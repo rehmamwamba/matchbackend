@@ -1,4 +1,5 @@
 import { Request, Response } from 'express';
+
 import User from '../models/user';
 
 const userController = {
@@ -13,11 +14,11 @@ const userController = {
   },
 
   register: async (req: Request, res: Response) => {
-    // Existing code for the register function
+    // Logique pour enregistrer un nouvel utilisateur
   },
 
   login: async (req: Request, res: Response) => {
-    // Existing code for the login function
+    // Logique pour connecter un utilisateur
   }
 };
 

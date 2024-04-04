@@ -11,14 +11,14 @@ export default {
   },
 
   async getMessageById(req: Request, res: Response) {
-    // Implémentation pour récupérer un message par son ID
+   
   },
 
   async updateMessage(req: Request, res: Response) {
-    // Implémentation pour mettre à jour un message
+    
   },
 
   async deleteMessage(req: Request, res: Response) {
-    // Implémentation pour supprimer un message
+    
   }
 };

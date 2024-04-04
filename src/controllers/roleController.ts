@@ -1,6 +1,5 @@
-// roleController.ts
-
 import { Request, Response } from 'express';
+
 import Role from '../models/roleModel';
 
 export async function createRole(req: Request, res: Response) {

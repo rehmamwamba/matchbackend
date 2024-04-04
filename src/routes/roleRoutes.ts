@@ -1,5 +1,3 @@
-// roleRoutes.ts
-
 import express from 'express';
 import { createRole, getAllRoles } from '../controllers/roleController';
 

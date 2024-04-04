@@ -1,21 +1,27 @@
 import express from 'express';
-import  connectDB  from './db'; // Importez la fonction connectDB depuis votre fichier db.ts
-import authRoutes from './routes/authRoutes';
-import roleRoutes from './routes/roleRoutes';
+import connectDB  from './db/db';
 
 const app = express();
 
-// Middleware pour parser les données JSON
-app.use(express.json());
+async function startServer() {
+    try {
+       
+        await connectDB();
 
-// Connexion à la base de données MongoDB
-connectDB();
+        // Configurez les routes et autres middleware
+        app.get('/', (req, res) => {
+            res.send('Hello World!');
+        });
 
-// Utilisation des routes d'authentification et des routes de gestion des rôles
-app.use('/auth', authRoutes);
-app.use('/roles', roleRoutes);
+        // Lancez le serveur
+        const PORT = process.env.PORT || 4000;
+        app.listen(PORT, () => {
+            console.log(`Server started on port ${PORT}`);
+        });
+    } catch (error) {
+        console.error('Error starting server:', error);
+    }
+}
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Serveur démarré sur le port ${PORT}`);
-});
+
+startServer();

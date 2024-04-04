@@ -1,6 +1,5 @@
-// authRoutes.ts
-
 import express from 'express';
+
 import { loginUser } from '../controllers/authController';
 import { body, validationResult } from 'express-validator';
 
